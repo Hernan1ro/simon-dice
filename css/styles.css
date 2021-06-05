@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #dedede;
+  background: linear-gradient(#dc2424, #4a569d);
   display: flex;
   align-items: center;
   height: 100vh;
