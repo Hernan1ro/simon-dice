@@ -10,6 +10,7 @@ body {
   justify-content: center;
   height: 100vh;
 }
+
 .gameboard {
   height: 100vh;
   width: 100vh;
@@ -19,6 +20,20 @@ body {
   max-height: 60vh;
   max-width: 60vh;
   position: relative;
+}
+
+@media screen and (max-width: 320px) {
+  .gameboard {
+    height: 43%;
+    width: 80%;
+  }
+  #btnEmpezar {
+    width: 214px;
+    height: 60px;
+    font-size: 1.4em;
+    top: calc(50% - 30px);
+    left: calc(50% - 107px);
+  }
 }
 
 .color {
