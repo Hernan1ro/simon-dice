@@ -22,7 +22,7 @@ body {
   position: relative;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   .gameboard {
     height: 43%;
     width: 80%;
