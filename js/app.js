@@ -4,6 +4,8 @@ const celeste = document.getElementById("celeste");
 const violeta = document.getElementById("violeta");
 const naranja = document.getElementById("naranja");
 const verde = document.getElementById("verde");
+const contadorNivel = document.querySelector(".nivel");
+
 const ultimoNivel = 10;
 class Juego {
   constructor() {
@@ -13,6 +15,7 @@ class Juego {
     setTimeout(this.siguienteNivel(), 500);
   }
   inicializador() {
+    this.limpiarHtml();
     this.siguienteNivel = this.siguienteNivel.bind(this);
     this.elegirColor = this.elegirColor.bind(this);
     this.toggleBtnEmpezar();
@@ -23,6 +26,9 @@ class Juego {
       violeta,
       celeste,
     };
+  }
+  limpiarHtml() {
+    contadorNivel.innerHTML = "Nivel";
   }
   toggleBtnEmpezar() {
     if (btnEmpezar.classList.contains("hide")) {
@@ -68,9 +74,13 @@ class Juego {
   }
   iluminarSecuencia() {
     for (let i = 0; i < this.nivel; i++) {
+      this.modificarNivelHtml(this.nivel);
       const color = this.transformarNumeroAColor(this.secuencia[i]);
       setTimeout(() => this.iluminarColor(color), 1000 * i);
     }
+  }
+  modificarNivelHtml(nivel) {
+    contadorNivel.innerHTML = `Nivel: ${nivel}`;
   }
   iluminarColor(color) {
     this.colores[color].classList.add("light");
